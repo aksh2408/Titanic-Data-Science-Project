@@ -1,18 +1,34 @@
 import pandas as pd
-
+import numpy as np
 import sklearn
 
 def execute(input_file, output_file, force_write = True):
-    """Builds features
+    """Builds features:
+        This step is Data Cleanzing
 
     Args:
         input_file (str): input file.
     """
-    df = pd.read_csv(input_file)
 
+    '''
+    Data preprocessing stage: Deleting the unwanted anamolies
+    '''
+    
+    df = pd.read_csv('C:/Users/Akshay/train.csv', sep = ";")
+    
+    df = df.dropna() #Deleting or dropping out the null values
+    
+    df = df.drop(["Name","Ticket", "Cabin"], axis = 1, inplace = True) 
+    #Deleting the unwanted columns as it is mainly consist of strings
+    
     df["Sex"] = df["Sex"].replace("male", 0)
     df["Sex"] = df["Sex"].replace("female", 1)
 
+    sex_mapping = {'male': 0, 'female': 1}
+    for dataset in train_test_data:
+        dataset['Sex'] = dataset['Sex'].map[sex_mapping]
+        
+        
     embarked_dict = {}
     embarked_dict_values = 0
     for i in df.Embarked:
@@ -30,3 +46,5 @@ def execute(input_file, output_file, force_write = True):
     df.loc[df["FamilySize"] == 1, "IsAlone"] = 1
 
     df.to_csv(output_file)
+
+execute('train.csv', 'subtrain.csv')
