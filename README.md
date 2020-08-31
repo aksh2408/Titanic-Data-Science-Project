@@ -15,13 +15,13 @@ A text file with a scenario is added.
 Followed and implemented the code with some good practices.
 
 ## TASK4 - feature engineering
-### Data Handling and Feature Engineering;
+#### Data Handling and Feature Engineering;
   - Importing Data with Pandas
   - Data cleanzing and Data wrangling
   - Feature Importance with visualization
 
 ## TASK5 - models
-### Data Analysis;
+#### Data Analysis;
   - Scikit-learn 
   - Model selection and 
   - Hyperparameter Tuning
@@ -49,7 +49,7 @@ P.S. Apologise, due to time constraints, i couldnt complete and obtain the outpu
 
 ## TASK9 - prediction api
 As there were 2 methods implemented, I have used only one method to integrate with API.
-  ### Framework used:
+ #### Framework used:
       - Flask
 
 
