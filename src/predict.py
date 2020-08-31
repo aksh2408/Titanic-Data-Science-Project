@@ -23,3 +23,5 @@ for i in df.iterrows():
         ok = ok + 1
 
 print("accuracy is", ok / df.shape[0])
+
+
